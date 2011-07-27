@@ -1,21 +1,43 @@
-<h2>Descrição</h2>
+----------------
+Descrição
+----------------
 
 Esta é uma aplicação de exemplo em Grails que aplica técnicas que provilegiam performance. Utiliza diversos plugins como springcache, cache-headers, resources, cached-resources, zipped-resources, spring-events, e outros. Além dos plugins, utiliza a técnica sugerida por Burt Beckwith para a não utilização de collections nas relações many-to-many e many-to-one. E por último, utiliza algumas técnicas sugeridas por Peter Ledbrook na apresentacção "Tuning Your Grails Applications" (tem no youtube).
 
-<h2>O que tem aqui?</h2>
+----------------
+O que tem aqui?
+----------------
 
 Esta aplicação utiliza plugins e técnicas para melhorar a performance de uma aplicação Grails.
 
-<h3>Plugins</h3>
-<ul>
-	<li>springcache</li>
-	<li>spring-events</li>	
-</ul>
+----------------
+Plugins
+----------------
+- springcache: usado para fazer cache actions de controllers. Ao invés de executar a action toda novamente, acessar o banco de dados, etc, a resposta vem do cache e nada é executado na action que tiver configurada com o cache.
 
+- spring-events: usado para executar tarefas assíncronas. Quando o usuário faz upload de uma foto, ao invés de criar a foto principal com 800px, o thumbnail maior com 150px, e o menor com 50px na hora do Request, cria-se esta imagens depois, de forma assíncrona. Um evento é lançado, e um FotoService é um listener desse evento, então é executado depois, assíncronamente (mas é muito rápido -- às vezes termina antes do request voltar).
 
-<h2>Passo a passo</h2>
+- resources: usado para gerenciar os arquivos CSS e JS da aplicação. Este plugin junta (bundle) os arquivos CSS em um só, junta os JS em um só, e se encarrega de incluir o CSS no header do html, e incluir o JS no final do documento, última coisa antes do </body>. Só não faz o minify ainda, mas em breve....
+
+- cached-resources: usado para renomear os arquivos CSS e JS, e incluir headers para que estes arquivos estáticos sejam guardados em cache pelo browser do usuário.
+
+- zipped-resources: usado para gzippar os arquivos estáticos e diminuir assim seus tamanhos para serem enviados para o browser do usuário.
+
+- cache-headers: plugin utilizado por outro plugin (cached-resoruces). Ele cria headers para fazer cache de arquivos estáticos. Mas vc pode usar para criar headers de cache para suas actions (assim seu site fica em cache no browser do usuario pelo tempo que vc determinar). Funciona muito bem.
+
+- jquery: este não percisa falar muito né. Mas uso como plugin pois ele já expõe os módulos para o resources-plugin
+
+- jquery-ui: plugin para incluir o jQuery UI
+
+- blueprint: plugin para incluir o framework de CSS Blueprint.
+
+-------------------------
+Passo a passo
+-------------------------
 
 Se fizer um clone deste repo e executar locamente o GPerform, tem um usuário "eumesmo" e senha "1234" pra vc iniciar a brincadeira. Mas precisará configurar o diretório das fotos no Config.groovy
 
-<h2>PS.</h2>
+-------------------------
+PS.
+-------------------------
 Além disso, como esta é uma aplicação para performance, eu coloquei as fotos sendo servidas diretamente por um Apache. Não é o tomcat que serve as fotos, ok?
