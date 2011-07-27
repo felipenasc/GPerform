@@ -31,11 +31,25 @@ Plugins
 
 - blueprint: plugin para incluir o framework de CSS Blueprint.
 
+
+------------------------
+Técnicas Utilizadas
+------------------------
+
+- Uso de classes de relacionamento ao invés de usar os relacionamentos nativos do Grails. 
+Ao invés de ter uma relação many-to-many entre duas classes, cria-se uma terceira classe no meio, de relacionamento, com duas relações many-to-one. Isso é até bom por um lado, pois permite que futuramente a relação tenha atributos e se torne uma entidade mais forte também. No banco de dados não muda nada, pois usa-se uma composite-id para criar a tabela de relacionamento com as duas chaves estrangeiras sendo a chave primária da relação.
+
+- Processamento Assíncrono
+Ao invés de processar fotos no momento do Request, de forma síncrona, uso o Spring-Events plugin para lançar um evento do tipo FotoSubidaEvent. Do outro lado tem um FotoService que é um Listener deste tipo de evento, e então ele é executado para processar as imagens.
+
+- Cache de action
+Uso o @Cacheable do Springcache plugin para colocar o resultado de uma action em cache. Aí o FotoService possui um método anotado com @CacheFlush para matar o cache quando uma nova foto é processada.
+
 -------------------------
 Passo a passo
 -------------------------
 
-Se fizer um clone deste repo e executar locamente o GPerform, tem um usuário "eumesmo" e senha "1234" pra vc iniciar a brincadeira. Mas precisará configurar o diretório das fotos no Config.groovy
+Se fizer um clone deste repo e executar locamente o GPerform, tem um usuário "eumesmo" e senha "1234" pra vc iniciar a brincadeira. Mas precisará configurar o diretório das fotos no Config.groovy (TODO: melhorar esta descricao)
 
 -------------------------
 PS.
