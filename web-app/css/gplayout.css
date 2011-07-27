@@ -1,0 +1,62 @@
+#header{
+	height: 60px;
+	width: 976px;
+	margin: 10px 0;
+	padding-left: 10px;
+}
+#header .logo{
+	color: white;
+	font: 50px "OmnesLight", arial, sans-serif;
+	text-shadow: 0px 4px 8px rgba(0, 14, 57, 0.5);
+}
+#header .hdireita{
+	color: #c3c3c3;
+	font-size: 16px;
+	text-align: right;
+	margin-top:15px; 
+}
+
+
+#conteudoPrincipal{
+	background-color: #EEF3FF;
+	width: 956px;
+	padding: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-moz-border-radius-topleft:10px;
+	-moz-border-radius-topright:10px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	min-height:400px;
+  	height:auto !important;
+  	height:400px;
+}
+
+#footer{
+	background-color: #000;
+	height: 100px;
+	width: 976px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomleft:10px;
+	-moz-border-radius-bottomright:10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+}
+
+.arredondado{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.maisRecentes{
+	background-color: white;
+	padding: 15px;
+}
+
+.submitBtn{
+	background-color:#2B3CB5;
+	color: white;
+	padding: 6px;
+}
