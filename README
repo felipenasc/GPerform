@@ -1,2 +1,5 @@
 Esta é uma aplicação de exemplo em Grails que aplica técnicas que provilegiam performance. Utiliza diversos plugins como springcache, cache-headers, resources, cached-resources, zipped-resources, spring-events, e outros. Além dos plugins, utiliza a técnica sugerida por Burt Beckwith para a não utilização de collections nas relações many-to-many e many-to-one. E por último, utiliza algumas técnicas sugeridas por Peter Ledbrook na apresentacção "Tuning Your Grails Applications" (tem no youtube).
   
+Se fizer um clone deste repo e executar locamente o GPerform, tem um usuário "eumesmo" e senha "1234" pra vc iniciar a brincadeira. Mas precisará configurar o diretório das fotos no Config.groovy
+
+Além disso, como esta é uma aplicação para performance, eu coloquei as fotos sendo servidas diretamente por um Apache. Não é o tomcat que serve as fotos, ok?
