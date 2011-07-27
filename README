@@ -1,0 +1,2 @@
+Esta é uma aplicação de exemplo em Grails que aplica técnicas que provilegiam performance. Utiliza diversos plugins como springcache, cache-headers, resources, cached-resources, zipped-resources, spring-events, e outros. Além dos plugins, utiliza a técnica sugerida por Burt Beckwith para a não utilização de collections nas relações many-to-many e many-to-one. E por último, utiliza algumas técnicas sugeridas por Peter Ledbrook na apresentacção "Tuning Your Grails Applications" (tem no youtube).
+  
